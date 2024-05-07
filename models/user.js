@@ -47,6 +47,10 @@ const User = dbConnection.define('User', {
 });
 export default User;
 
+User.associations = (models) => {
+  User.hasMany(models.Post)
+}
+
 (async () => {
   try {
     await dbConnection.sync(); // This will create the User table if it doesn't exist
