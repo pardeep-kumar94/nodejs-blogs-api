@@ -16,6 +16,7 @@ const Post = dbConnection.define('Post', {
 
 Post.associations = (models) => {
   Post.belongsTo(models.User, { foreignKey: 'userId', onDelete: 'CASCADE' })
+  Post.hasMany(models.PostImages)
 }
 
 export default Post;
